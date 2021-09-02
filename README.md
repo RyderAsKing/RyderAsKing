@@ -1,5 +1,4 @@
 ### Hi there 👋
-I love to develop stuff.
 <br />
 ![RyderAsKing's GitHub stats](https://github-readme-stats.vercel.app/api?username=ryderasking&theme=dark&show_icons=true) 
 <br />

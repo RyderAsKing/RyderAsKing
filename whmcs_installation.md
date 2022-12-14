@@ -149,12 +149,13 @@ sudo certbot --nginx -d debian.leemahoney.cloud
 ## Create a database and a user for WHMCS:
 
 sudo mysql -u root -p
-
+```
 >> create database whmcs;
 >> create user whmcsuser@localhost identified by 'mystrongpassword';
 >> grant delete, insert, select, update, lock tables, alter, create, drop, index on whmcs.* to whmcsuser@localhost;
 >> flush privileges;
 >> exit
+```
 ## Download WHMCS v8.6 to your /var/www/html folder and enjoy. (will not work on versions prior due to PHP 8.1)
 
 ## Ps, don't forget to change permissions on your html folder:

@@ -1,14 +1,15 @@
 # WHMCS installation on a slice
 WHMCS installation can be rough sometimes
 ## Update and upgrade your packages:
-
+```
 sudo apt update
 sudo apt upgrade
+```
 ## Install Nginx and start it:
-
+```
 sudo apt install nginx
 sudo systemctl start nginx
-sudo systemctl enable nginx
+sudo systemctl enable nginx```
 ## Install, start and set up MariaDB:
 
 sudo apt install mariadb-server

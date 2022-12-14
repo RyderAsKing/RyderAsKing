@@ -9,63 +9,74 @@ sudo apt upgrade
 ```
 sudo apt install nginx
 sudo systemctl start nginx
-sudo systemctl enable nginx```
+sudo systemctl enable nginx
+```
 ## Install, start and set up MariaDB:
-
+```
 sudo apt install mariadb-server
 sudo systemctl start mariadb
 sudo systemctl enable mariadb
 sudo mysql_secure_installation
+```
 ## Install dependencies:
 
+```
 sudo apt install ca-certificates apt-transport-https software-properties-common wget curl lsb-release
+```
 ## Import a repository for PHP 8.1 and then update and upgrade packages again:
-
+```
 sudo apt install software-properties-common
 sudo add-apt-repository ppa:ondrej/php
 sudo apt update
-
+```
 ## Install PHP 8.1 and then start FPM and check its running:
-
+```
 sudo apt install php8.1 php8.1-fpm php8.1-cli
 sudo systemctl start php8.1-fpm
 sudo systemctl enable php8.1-fpm
 sudo systemctl status php8.1-fpm
+```
 ## Install the extensions required by WHMCS:
-
+```
 sudo apt install php8.1-curl php8.1-gd php8.1-xml php8.1-common php8.1-mbstring php8.1-gmp php8.1-bcmath php8.1-intl php8.1-zip php8.1-mysql php8.1-soap
+```
 ## Download and extract ioncube loaders:
-
+```
 cd /tmp
 wget https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
 tar -zxvf ioncube_loaders_lin_x86-64.tar.gz
+```
 ## Get your PHP extension path:
-
+```
 php -i | grep extension_dir
 >> extension_dir => /usr/lib/php/20210902 => /usr/lib/php/20210902
+```
 ## Copy the correct loader to your extensions directory:
-
+```
 sudo cp /tmp/ioncube/ioncube_loader_lin_8.1.so /usr/lib/php/20210902
+```
 ## Add the extension to your php.ini file (you may also want to add it to /etc/php/8.1/cli/php.ini)  :
-
+```
 sudo nano /etc/php/8.1/fpm/php.ini
 zend_extension = /usr/lib/php/20210902/ioncube_loader_lin_8.1.so
+```
 ## Restart PHP FPM:
-
+```
 sudo systemctl restart php8.1-fpm
- 
+ ```
 
-## Set up your Nginx configuration file (in my example debian.leemahoney.cloud)  :
-
-sudo nano /etc/nginx/sites-available/debian.leemahoney.cloud
+## Set up your Nginx configuration file (in my example something.host)  :
+```
+sudo nano /etc/nginx/sites-available/something.host
+```
 ```
 server {
         listen 80;
-        server_name debian.leemahoney.cloud;
+        server_name something.host;
 
         root /var/www/html;
-        access_log /var/log/nginx/debian.leemahoney.cloud-access_log;
-        error_log /var/log/nginx/debian.leemahoney.cloud-error_log;
+        access_log /var/log/nginx/something.host-access_log;
+        error_log /var/log/nginx/something.host-error_log;
 
         add_header X-Frame-Options "SAMEORIGIN";
         add_header X-XSS-Protection "1; mode=block";
@@ -140,16 +151,19 @@ server {
 Modified from https://gist.github.com/Bharat-B/6ba2e18f85591c77fdf00ad7334fb9c6 and https://gist.github.com/Bharat-B/62205bfd1dbe6d7ac9e24973c2bfd47e
 
 ## Enable the configuration file and reload Nginx:
-
-sudo ln -s /etc/nginx/sites-available/debian.leemahoney.cloud /etc/nginx/sites-enabled/debian.leemahoney.cloud
+```
+sudo ln -s /etc/nginx/sites-available/something.host /etc/nginx/sites-enabled/something.host
 sudo systemctl reload nginx
+```
 ## Optionally install a free SSL on the domain:
-
+```
 sudo apt install certbot python3-certbot-nginx
-sudo certbot --nginx -d debian.leemahoney.cloud
+sudo certbot --nginx -d something.host
+```
 ## Create a database and a user for WHMCS:
-
+```
 sudo mysql -u root -p
+```
 ```
 >> create database whmcs;
 >> create user whmcsuser@localhost identified by 'mystrongpassword';
@@ -160,5 +174,6 @@ sudo mysql -u root -p
 ## Download WHMCS v8.6 to your /var/www/html folder and enjoy. (will not work on versions prior due to PHP 8.1)
 
 ## Ps, don't forget to change permissions on your html folder:
-
+```
 sudo chown -R $USER:$USER /var/www/html
+```

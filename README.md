@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Ryder Asking</h1>
-<h3 align="center">I'm a full-stack developer with over 8 years of experience who loves to create beautiful and useful things.</h3>
+<h3 align="center">I'm a full-stack developer with great years of experience who loves to create beautiful and useful things.</h3>
 
 - 👨‍💻 All of my projects are available at [ryder.pro](https://ryder.pro)
 

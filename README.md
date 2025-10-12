@@ -4,7 +4,7 @@
   
   [![Website](https://img.shields.io/badge/Website-ryder.pro-blue?style=flat-square)](https://ryder.pro)
   [![Discord](https://img.shields.io/badge/Discord-ryder__asking-7289DA?style=flat-square&logo=discord&logoColor=white)](https://discord.com)
-  [![Email](https://img.shields.io/badge/Email-owner%40ryder.pro-red?style=flat-square&logo=gmail&logoColor=white)](mailto:owner@ryder.pro)
+  [![Email](https://img.shields.io/badge/Email-contact%40ryder.pro-red?style=flat-square&logo=gmail&logoColor=white)](mailto:contact@ryder.pro)
 </div>
 
 ## 🛠️ Primary Stack
@@ -113,7 +113,7 @@ _Essential tools for development workflow_
 > I'm always interested in connecting with fellow developers and discussing new opportunities. Feel free to reach out through any of these channels:
 
 - Website: [ryder.pro](https://ryder.pro)
-- Email: [owner@ryder.pro](mailto:owner@ryder.pro)
+- Email: [contact@ryder.pro](mailto:contact@ryder.pro)
 - Discord: `ryder_asking`
 
 Feel free to reach out if you want to discuss technology, collaboration opportunities, or just have a chat!

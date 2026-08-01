@@ -101,9 +101,7 @@ _Essential tools for development workflow_
 ![Figma](https://img.shields.io/badge/-Figma-F24E1E?style=flat-square&logo=figma&logoColor=white)
 
 <div align="center">
-  
-  ![GitHub Stats](https://github-readme-stats.vercel.app/api/top-langs?username=ryderasking&show_icons=true&locale=en&layout=compact&theme=tokyonight)
-  
+    
   ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=ryderasking&)
   
 </div>
